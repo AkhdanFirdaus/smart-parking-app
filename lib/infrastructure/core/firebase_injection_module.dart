@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -10,7 +11,8 @@ abstract class FirebaseInjectableModule {
   GoogleSignIn get googleSignIn => GoogleSignIn();
   @lazySingleton
   FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
-  // TODO: Firestore
+  @lazySingleton
+  FirebaseFirestore get firestore => FirebaseFirestore.instance;
   @lazySingleton
   FirebaseMessaging get firebaseMessaging => FirebaseMessaging.instance;
   @lazySingleton
